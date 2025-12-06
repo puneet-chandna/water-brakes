@@ -20,13 +20,9 @@ _Transform raw terrain data into actionable water management insights with inter
 
 ### Interactive Map View
 
-<!-- Add your map screenshot here -->
-
 ![Map View](assets/map_view.png)
 
 ### Contour Analysis
-
-<!-- Add your contour screenshot here -->
 
 ![Contour View](assets/contour_view.png)
 
