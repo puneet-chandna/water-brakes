@@ -39,27 +39,33 @@ html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
 .main-header h1 { font-size: 2rem; font-weight: 700; }
 .main-header p { margin-top: 0.5rem; opacity: 0.9; }
 .card { background: white !important; border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08); border: 1px solid #e8eaed; }
-.card h3 { color: #1e3a5f !important; font-weight: 600; margin-top: 0; }
+.card h3, .card h4, .card h5, .card p, .card span { color: #1e3a5f !important; font-weight: 600; margin-top: 0; }
 [data-testid="stSidebar"], [data-testid="stSidebar"] > div:first-child { background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%) !important; }
-[data-testid="stSidebar"] p, [data-testid="stSidebar"] span, [data-testid="stSidebar"] label, .sidebar-header h2 { color: #334155 !important; }
+[data-testid="stSidebar"] p, [data-testid="stSidebar"] span, [data-testid="stSidebar"] label, [data-testid="stSidebar"] h1, [data-testid="stSidebar"] h2, [data-testid="stSidebar"] h3, [data-testid="stSidebar"] h4, .sidebar-header h2 { color: #334155 !important; }
+[data-testid="stSidebar"] .stMarkdown, [data-testid="stSidebar"] small, [data-testid="stSidebar"] b, [data-testid="stSidebar"] strong { color: #334155 !important; }
 .metric-card { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%) !important; border-radius: 10px; padding: 1rem; text-align: center; border: 1px solid #bae6fd; }
 .metric-card .value { font-size: 1.5rem; font-weight: 700; color: #0369a1 !important; }
 .metric-card .label { font-size: 0.85rem; color: #64748b !important; margin-top: 0.25rem; }
 .stTabs [data-baseweb="tab-list"] { gap: 8px; background: #f1f5f9 !important; padding: 0.5rem; border-radius: 10px; }
-.stTabs [data-baseweb="tab"] { border-radius: 8px; padding: 0.5rem 1rem; font-weight: 500; color: #334155 !important; }
-.stButton > button { border-radius: 8px; font-weight: 500; transition: all 0.2s ease; }
+.stTabs [data-baseweb="tab"] { border-radius: 8px; padding: 0.5rem 1rem; font-weight: 500; color: #334155 !important; background: white !important; }
+.stTabs [data-baseweb="tab"][aria-selected="true"] { background: #3b82f6 !important; color: white !important; }
+.stButton > button { border-radius: 8px; font-weight: 500; transition: all 0.2s ease; color: #1e3a5f !important; }
 .stButton > button:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
 [data-testid="stFileUploader"] { border: 2px dashed #cbd5e1 !important; border-radius: 12px; padding: 1rem; background: #fafafa !important; }
-[data-testid="stFileUploader"] p, [data-testid="stFileUploader"] span { color: #334155 !important; }
-.stSelectbox > div > div { border-radius: 8px; background: white !important; }
-.stSelectbox label, .stSlider label { color: #334155 !important; }
+[data-testid="stFileUploader"] p, [data-testid="stFileUploader"] span, [data-testid="stFileUploader"] small { color: #334155 !important; }
+.stSelectbox > div > div { border-radius: 8px; background: white !important; color: #334155 !important; }
+.stSelectbox label, .stSlider label, .stNumberInput label { color: #334155 !important; }
 .stAlert { border-radius: 10px; }
 .js-plotly-plot { border-radius: 12px; overflow: hidden; }
 .modebar-btn { transform: scale(1.3) !important; }
 [data-testid="stDataFrame"] { background: white !important; }
-.stMarkdown p:not(.main-header *), .stMarkdown h1:not(.main-header *), .stMarkdown h2:not(.main-header *), .stMarkdown h3:not(.main-header *), .stMarkdown h4:not(.main-header *), .stMarkdown span:not(.main-header *) { color: #334155 !important; }
-.main-header, .main-header h1, .main-header p, .main-header span { color: white !important; }
+.stMarkdown p, .stMarkdown h1, .stMarkdown h2, .stMarkdown h3, .stMarkdown h4, .stMarkdown h5, .stMarkdown span, .stMarkdown small, .stMarkdown li { color: #334155 !important; }
+.main-header *, .main-header h1, .main-header p, .main-header span { color: white !important; }
 .stDownloadButton button { background: white !important; color: #1e3a5f !important; border: 1px solid #e8eaed !important; }
+.stExpander { background: white !important; border: 1px solid #e8eaed !important; border-radius: 8px; }
+.stExpander p, .stExpander span, .stExpander td, .stExpander th { color: #334155 !important; }
+[data-testid="stExpander"] summary { color: #1e3a5f !important; }
+.stSpinner > div { color: #3b82f6 !important; }
 #MainMenu {visibility: hidden;} footer {visibility: hidden;}
 </style>
 """
@@ -76,26 +82,33 @@ html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
 .main-header h1 { font-size: 2rem; font-weight: 700; }
 .main-header p { margin-top: 0.5rem; opacity: 0.9; }
 .card { background: #1e293b !important; border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.3); border: 1px solid #334155; }
-.card h3 { color: #93c5fd !important; font-weight: 600; margin-top: 0; }
+.card h3, .card h4, .card h5, .card p, .card span { color: #93c5fd !important; font-weight: 600; margin-top: 0; }
 [data-testid="stSidebar"], [data-testid="stSidebar"] > div:first-child { background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%) !important; }
-[data-testid="stSidebar"] p, [data-testid="stSidebar"] span, [data-testid="stSidebar"] label, .sidebar-header h2 { color: #e2e8f0 !important; }
+[data-testid="stSidebar"] p, [data-testid="stSidebar"] span, [data-testid="stSidebar"] label, [data-testid="stSidebar"] h1, [data-testid="stSidebar"] h2, [data-testid="stSidebar"] h3, [data-testid="stSidebar"] h4, .sidebar-header h2 { color: #e2e8f0 !important; }
+[data-testid="stSidebar"] .stMarkdown, [data-testid="stSidebar"] small, [data-testid="stSidebar"] b, [data-testid="stSidebar"] strong { color: #e2e8f0 !important; }
 .metric-card { background: linear-gradient(135deg, #1e3a5f 0%, #1e40af 100%) !important; border-radius: 10px; padding: 1rem; text-align: center; border: 1px solid #3b82f6; }
 .metric-card .value { font-size: 1.5rem; font-weight: 700; color: #93c5fd !important; }
 .metric-card .label { font-size: 0.85rem; color: #94a3b8 !important; margin-top: 0.25rem; }
 .stTabs [data-baseweb="tab-list"] { gap: 8px; background: #1e293b !important; padding: 0.5rem; border-radius: 10px; }
-.stTabs [data-baseweb="tab"] { border-radius: 8px; padding: 0.5rem 1rem; font-weight: 500; color: #e2e8f0 !important; }
-.stButton > button { border-radius: 8px; font-weight: 500; transition: all 0.2s ease; }
+.stTabs [data-baseweb="tab"] { border-radius: 8px; padding: 0.5rem 1rem; font-weight: 500; color: #e2e8f0 !important; background: #334155 !important; }
+.stTabs [data-baseweb="tab"][aria-selected="true"] { background: #3b82f6 !important; color: white !important; }
+.stButton > button { border-radius: 8px; font-weight: 500; transition: all 0.2s ease; color: #e2e8f0 !important; }
 .stButton > button:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
 [data-testid="stFileUploader"] { border: 2px dashed #475569 !important; border-radius: 12px; padding: 1rem; background: #1e293b !important; }
-[data-testid="stFileUploader"] p, [data-testid="stFileUploader"] span { color: #e2e8f0 !important; }
+[data-testid="stFileUploader"] p, [data-testid="stFileUploader"] span, [data-testid="stFileUploader"] small { color: #e2e8f0 !important; }
 .stSelectbox > div > div { border-radius: 8px; background: #1e293b !important; color: #e2e8f0 !important; }
-.stSelectbox label, .stSlider label { color: #e2e8f0 !important; }
+.stSelectbox label, .stSlider label, .stNumberInput label { color: #e2e8f0 !important; }
 .stAlert { border-radius: 10px; }
 .js-plotly-plot { border-radius: 12px; overflow: hidden; }
 .modebar-btn { transform: scale(1.3) !important; }
-[data-testid="stDataFrame"] { background: #1e293b !important; }
-.stMarkdown p, .stMarkdown h1, .stMarkdown h2, .stMarkdown h3, .stMarkdown h4, .stMarkdown span { color: #e2e8f0 !important; }
+[data-testid="stDataFrame"] { background: #1e293b !important; color: #e2e8f0 !important; }
+.stMarkdown p, .stMarkdown h1, .stMarkdown h2, .stMarkdown h3, .stMarkdown h4, .stMarkdown h5, .stMarkdown span, .stMarkdown small, .stMarkdown li { color: #e2e8f0 !important; }
+.main-header *, .main-header h1, .main-header p, .main-header span { color: white !important; }
 .stDownloadButton button { background: #1e293b !important; color: #93c5fd !important; border: 1px solid #475569 !important; }
+.stExpander { background: #1e293b !important; border: 1px solid #334155 !important; border-radius: 8px; }
+.stExpander p, .stExpander span, .stExpander td, .stExpander th { color: #e2e8f0 !important; }
+[data-testid="stExpander"] summary { color: #93c5fd !important; }
+.stSpinner > div { color: #3b82f6 !important; }
 #MainMenu {visibility: hidden;} footer {visibility: hidden;}
 </style>
 """
