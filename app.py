@@ -51,8 +51,40 @@ html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
 .stTabs [data-baseweb="tab"][aria-selected="true"] { background: #3b82f6 !important; color: white !important; }
 .stButton > button { border-radius: 8px; font-weight: 500; transition: all 0.2s ease; color: #1e3a5f !important; }
 .stButton > button:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
-[data-testid="stFileUploader"] { border: 2px dashed #cbd5e1 !important; border-radius: 12px; padding: 1rem; background: #fafafa !important; }
-[data-testid="stFileUploader"] p, [data-testid="stFileUploader"] span, [data-testid="stFileUploader"] small { color: #334155 !important; }
+
+/* File Uploader Styling - Light Mode */
+[data-testid="stFileUploader"] { 
+    border: 2px dashed #cbd5e1 !important; 
+    border-radius: 12px; 
+    padding: 1rem; 
+    background: white !important; 
+}
+[data-testid="stFileUploader"] section { background: white !important; }
+[data-testid="stFileUploader"] p, 
+[data-testid="stFileUploader"] span, 
+[data-testid="stFileUploader"] small,
+[data-testid="stFileUploader"] div,
+[data-testid="stFileUploader"] button { 
+    color: #334155 !important; 
+    background: white !important;
+}
+[data-testid="stFileUploader"] button {
+    border: 1px solid #cbd5e1 !important;
+    background: #f8fafc !important;
+    color: #334155 !important;
+}
+
+/* Toggle Button Styling - Light Mode */
+.stCheckbox > label, 
+[data-testid="stCheckbox"] label,
+[role="checkbox"] {
+    color: #334155 !important;
+    background: transparent !important;
+}
+[data-baseweb="checkbox"] {
+    background: white !important;
+}
+
 .stSelectbox > div > div { border-radius: 8px; background: white !important; color: #334155 !important; }
 .stSelectbox label, .stSlider label, .stNumberInput label { color: #334155 !important; }
 .stAlert { border-radius: 10px; }
@@ -94,8 +126,40 @@ html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
 .stTabs [data-baseweb="tab"][aria-selected="true"] { background: #3b82f6 !important; color: white !important; }
 .stButton > button { border-radius: 8px; font-weight: 500; transition: all 0.2s ease; color: #e2e8f0 !important; }
 .stButton > button:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
-[data-testid="stFileUploader"] { border: 2px dashed #475569 !important; border-radius: 12px; padding: 1rem; background: #1e293b !important; }
-[data-testid="stFileUploader"] p, [data-testid="stFileUploader"] span, [data-testid="stFileUploader"] small { color: #e2e8f0 !important; }
+
+/* File Uploader Styling - Dark Mode */
+[data-testid="stFileUploader"] { 
+    border: 2px dashed #475569 !important; 
+    border-radius: 12px; 
+    padding: 1rem; 
+    background: #1e293b !important; 
+}
+[data-testid="stFileUploader"] section { background: #1e293b !important; }
+[data-testid="stFileUploader"] p, 
+[data-testid="stFileUploader"] span, 
+[data-testid="stFileUploader"] small,
+[data-testid="stFileUploader"] div,
+[data-testid="stFileUploader"] button { 
+    color: #e2e8f0 !important; 
+    background: #1e293b !important;
+}
+[data-testid="stFileUploader"] button {
+    border: 1px solid #475569 !important;
+    background: #334155 !important;
+    color: #e2e8f0 !important;
+}
+
+/* Toggle Button Styling - Dark Mode */
+.stCheckbox > label, 
+[data-testid="stCheckbox"] label,
+[role="checkbox"] {
+    color: #e2e8f0 !important;
+    background: transparent !important;
+}
+[data-baseweb="checkbox"] {
+    background: #1e293b !important;
+}
+
 .stSelectbox > div > div { border-radius: 8px; background: #1e293b !important; color: #e2e8f0 !important; }
 .stSelectbox label, .stSlider label, .stNumberInput label { color: #e2e8f0 !important; }
 .stAlert { border-radius: 10px; }
