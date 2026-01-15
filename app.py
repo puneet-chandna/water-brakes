@@ -84,6 +84,18 @@ html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
 [data-baseweb="checkbox"] {
     background: white !important;
 }
+/* Toggle switch specific styling */
+[data-testid="stCheckbox"] > label > div,
+[data-testid="stCheckbox"] > label > div > div,
+.stCheckbox > label > div,
+.stCheckbox > label > div > div {
+    background: #e2e8f0 !important;
+    border: 1px solid #cbd5e1 !important;
+}
+[data-testid="stCheckbox"] > label > div[data-checked="true"],
+.stCheckbox > label > div[data-checked="true"] {
+    background: #22c55e !important;
+}
 
 .stSelectbox > div > div { border-radius: 8px; background: white !important; color: #334155 !important; }
 .stSelectbox label, .stSlider label, .stNumberInput label { color: #334155 !important; }
@@ -92,11 +104,41 @@ html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
 .modebar-btn { transform: scale(1.3) !important; }
 [data-testid="stDataFrame"] { background: white !important; }
 .stMarkdown p, .stMarkdown h1, .stMarkdown h2, .stMarkdown h3, .stMarkdown h4, .stMarkdown h5, .stMarkdown span, .stMarkdown small, .stMarkdown li { color: #334155 !important; }
+/* Table styling - Light Mode */
+.stMarkdown table, .stMarkdown table thead, .stMarkdown table tbody, .stMarkdown table th, .stMarkdown table td { color: #334155 !important; background-color: white !important; border-color: #e2e8f0 !important; }
+.stMarkdown table th { background-color: #f1f5f9 !important; font-weight: 600; }
+@media (prefers-color-scheme: dark) {
+    .stMarkdown table, .stMarkdown table thead, .stMarkdown table tbody, .stMarkdown table th, .stMarkdown table td { color: #334155 !important; background-color: white !important; }
+    .stMarkdown table th { background-color: #f1f5f9 !important; }
+}
 .main-header *, .main-header h1, .main-header p, .main-header span { color: white !important; }
 .stDownloadButton button { background: white !important; color: #1e3a5f !important; border: 1px solid #e8eaed !important; }
 .stExpander { background: white !important; border: 1px solid #e8eaed !important; border-radius: 8px; }
 .stExpander p, .stExpander span, .stExpander td, .stExpander th { color: #334155 !important; }
 [data-testid="stExpander"] summary { color: #1e3a5f !important; }
+/* Expander content styling - Light Mode */
+.stExpander > div > div { background: white !important; }
+.stExpander [data-testid="stExpanderDetails"] { background: white !important; }
+.stExpander [data-testid="stExpanderDetails"] * { color: #334155 !important; }
+.stExpander:hover { background: white !important; }
+.stExpander:hover p, .stExpander:hover span, .stExpander:hover td, .stExpander:hover th { color: #334155 !important; }
+/* Cross-theme compatibility - Light app in dark browser */
+@media (prefers-color-scheme: dark) {
+    .stExpander { background: white !important; color: #334155 !important; }
+    .stExpander summary { color: #1e3a5f !important; }
+    .stExpander [data-testid="stExpanderDetails"] { background: white !important; }
+    .stExpander [data-testid="stExpanderDetails"] * { color: #334155 !important; }
+    [data-testid="stExpander"] > div:first-child { color: #1e3a5f !important; }
+    [data-testid="stExpander"] > div:first-child > div { color: #1e3a5f !important; }
+    [data-testid="stExpander"] > div:first-child * { color: #1e3a5f !important; }
+    /* Fix expanded state header visibility - more specific selectors */
+    [data-testid="stExpander"][aria-expanded="true"] > div:first-child { color: #1e3a5f !important; }
+    [data-testid="stExpander"][aria-expanded="true"] > div:first-child > div { color: #1e3a5f !important; }
+    [data-testid="stExpander"][aria-expanded="true"] > div:first-child * { color: #1e3a5f !important; }
+    [data-testid="stExpander"][aria-expanded="true"] summary { color: #1e3a5f !important; }
+    [data-testid="stExpander"] details summary { color: #1e3a5f !important; }
+    [data-testid="stExpander"] details[open] summary { color: #1e3a5f !important; }
+}
 .stSpinner > div { color: #3b82f6 !important; }
 #MainMenu {visibility: hidden;} footer {visibility: hidden;}
 </style>
@@ -159,6 +201,18 @@ html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
 [data-baseweb="checkbox"] {
     background: #1e293b !important;
 }
+/* Toggle switch specific styling */
+[data-testid="stCheckbox"] > label > div,
+[data-testid="stCheckbox"] > label > div > div,
+.stCheckbox > label > div,
+.stCheckbox > label > div > div {
+    background: #475569 !important;
+    border: 1px solid #64748b !important;
+}
+[data-testid="stCheckbox"] > label > div[data-checked="true"],
+.stCheckbox > label > div[data-checked="true"] {
+    background: #f97316 !important;
+}
 
 .stSelectbox > div > div { border-radius: 8px; background: #1e293b !important; color: #e2e8f0 !important; }
 .stSelectbox label, .stSlider label, .stNumberInput label { color: #e2e8f0 !important; }
@@ -167,11 +221,41 @@ html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
 .modebar-btn { transform: scale(1.3) !important; }
 [data-testid="stDataFrame"] { background: #1e293b !important; color: #e2e8f0 !important; }
 .stMarkdown p, .stMarkdown h1, .stMarkdown h2, .stMarkdown h3, .stMarkdown h4, .stMarkdown h5, .stMarkdown span, .stMarkdown small, .stMarkdown li { color: #e2e8f0 !important; }
+/* Table styling - Dark Mode */
+.stMarkdown table, .stMarkdown table thead, .stMarkdown table tbody, .stMarkdown table th, .stMarkdown table td { color: #e2e8f0 !important; background-color: #1e293b !important; border-color: #475569 !important; }
+.stMarkdown table th { background-color: #334155 !important; font-weight: 600; }
+@media (prefers-color-scheme: light) {
+    .stMarkdown table, .stMarkdown table thead, .stMarkdown table tbody, .stMarkdown table th, .stMarkdown table td { color: #e2e8f0 !important; background-color: #1e293b !important; }
+    .stMarkdown table th { background-color: #334155 !important; }
+}
 .main-header *, .main-header h1, .main-header p, .main-header span { color: white !important; }
 .stDownloadButton button { background: #1e293b !important; color: #93c5fd !important; border: 1px solid #475569 !important; }
 .stExpander { background: #1e293b !important; border: 1px solid #334155 !important; border-radius: 8px; }
 .stExpander p, .stExpander span, .stExpander td, .stExpander th { color: #e2e8f0 !important; }
 [data-testid="stExpander"] summary { color: #93c5fd !important; }
+/* Expander content styling - Dark Mode */
+.stExpander > div > div { background: #1e293b !important; }
+.stExpander [data-testid="stExpanderDetails"] { background: #1e293b !important; }
+.stExpander [data-testid="stExpanderDetails"] * { color: #e2e8f0 !important; }
+.stExpander:hover { background: #1e293b !important; }
+.stExpander:hover p, .stExpander:hover span, .stExpander:hover td, .stExpander:hover th { color: #e2e8f0 !important; }
+/* Cross-theme compatibility - Dark app in light browser */
+@media (prefers-color-scheme: light) {
+    .stExpander { background: #1e293b !important; color: #e2e8f0 !important; }
+    .stExpander summary { color: #93c5fd !important; }
+    .stExpander [data-testid="stExpanderDetails"] { background: #1e293b !important; }
+    .stExpander [data-testid="stExpanderDetails"] * { color: #e2e8f0 !important; }
+    [data-testid="stExpander"] > div:first-child { color: #93c5fd !important; }
+    [data-testid="stExpander"] > div:first-child > div { color: #93c5fd !important; }
+    [data-testid="stExpander"] > div:first-child * { color: #93c5fd !important; }
+    /* Fix expanded state header visibility - more specific selectors */
+    [data-testid="stExpander"][aria-expanded="true"] > div:first-child { color: #93c5fd !important; }
+    [data-testid="stExpander"][aria-expanded="true"] > div:first-child > div { color: #93c5fd !important; }
+    [data-testid="stExpander"][aria-expanded="true"] > div:first-child * { color: #93c5fd !important; }
+    [data-testid="stExpander"][aria-expanded="true"] summary { color: #93c5fd !important; }
+    [data-testid="stExpander"] details summary { color: #93c5fd !important; }
+    [data-testid="stExpander"] details[open] summary { color: #93c5fd !important; }
+}
 .stSpinner > div { color: #3b82f6 !important; }
 #MainMenu {visibility: hidden;} footer {visibility: hidden;}
 </style>
@@ -525,17 +609,36 @@ else:
     </div>
     """, unsafe_allow_html=True)
     
-  
-    with st.expander("📄 Expected Data Format"):
+    st.markdown("<br>", unsafe_allow_html=True)
+    
+    st.markdown("""
+    <div class="card">
+        <h3>📄 Expected Data Format</h3>
+        <p>Your CSV should contain columns like:</p>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
         st.markdown("""
-        Your CSV should contain columns like:
-        
-        **For UTM coordinates:**
+        <div class="card">
+            <h4>For UTM coordinates:</h4>
+        </div>
+        """, unsafe_allow_html=True)
+        st.markdown("""
         | Easting | Northing | Elevation | Distance (m) |
         |---------|----------|-----------|--------------|
         | 407755.99 | 1420175.89 | 29.11 | 0.0 |
-        
-        **For Lat/Lon coordinates:**
+        """)
+    
+    with col2:
+        st.markdown("""
+        <div class="card">
+            <h4>For Lat/Lon coordinates:</h4>
+        </div>
+        """, unsafe_allow_html=True)
+        st.markdown("""
         | Latitude | Longitude | Elevation |
         |----------|-----------|-----------|
         | 12.845 | 80.149 | 29.11 |
